@@ -86,16 +86,6 @@ const read = (data) => {
 };
 
 
-// read({
-//     user: 'rolikrinau@hotmail.com',
-//     password: 'all7Do61',
-//     host: 'imap-mail.outlook.com',
-//     port: 993,
-//     tls: true
-// }).then(response => {
-//     console.log(response);
-// })
-
 module.exports = {
     read
 }

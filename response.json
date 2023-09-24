@@ -1,0 +1,59 @@
+{
+    "status": true,
+    "data": {
+        "inbox_length": 3,
+        "inbox_data": [
+            {
+                "html": "<html data>",
+                "subject": "Yeni Outlook.com hesabınıza hoş geldiniz",
+                "from": [
+                    {
+                        "address": "no-reply@microsoft.com",
+                        "name": "Outlook Ekibi"
+                    }
+                ],
+                "to": [
+                    {
+                        "address": "rolikrinau@hotmail.com",
+                        "name": "roli krina"
+                    }
+                ],
+                "date": "2023-09-23T16:28:53.000Z"
+            },
+            {
+                "html": "<html data>",
+                "subject": "OpenAI - Verify your email",
+                "from": [
+                    {
+                        "address": "noreply@tm.openai.com",
+                        "name": "OpenAI"
+                    }
+                ],
+                "to": [
+                    {
+                        "address": "rolikrinau@hotmail.com",
+                        "name": ""
+                    }
+                ],
+                "date": "2023-09-23T16:29:00.000Z"
+            },
+            {
+                "html": "<html data>",
+                "subject": "Test Mail",
+                "from": [
+                    {
+                        "address": "help@wmaster.net",
+                        "name": "WM AI"
+                    }
+                ],
+                "to": [
+                    {
+                        "address": "rolikrinau@hotmail.com",
+                        "name": ""
+                    }
+                ],
+                "date": "2023-09-23T17:11:59.000Z"
+            }
+        ]
+    }
+}
