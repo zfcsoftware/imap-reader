@@ -19,5 +19,9 @@
   "dependencies": {
     "imap": "^0.8.19",
     "mailparser": "^3.6.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zfcsoftware/imap-reader.git"
   }
 }
