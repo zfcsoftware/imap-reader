@@ -161,6 +161,7 @@ imapReader.waitForLink({
 
 <details>
 <summary>Sample Failed Response</summary>
+
 ```js
 
 {
@@ -169,10 +170,10 @@ imapReader.waitForLink({
 }
 
 ```
+
 </details>
 
 ### Search for a code that meets the conditions you set in incoming mails
-
 
 
 ```js
