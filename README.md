@@ -174,7 +174,7 @@ imapReader.waitForLink({
 ```js
 const imapReader = require("imap-reader");
 
-imapReader.waitForLink({
+imapReader.waitForCode({
  imap: {
         user: 'lassalnimishr@hotmail.com',
         password: '91XTVPu69',
@@ -203,6 +203,32 @@ imapReader.waitForLink({
    **codeLength: (Optional)** Filters strings with the number of characters you give from all html elements.
 
    **querySelector: (Optional)** It allows you to limit your html content and filter the codes within the html element you select. For example, if it is sent as 'a', it scans the content of the first a tag in the html content.
+
+
+<details>
+<summary>Sample Successful Response</summary>
+```js
+{
+    status: true,
+    data: ['542569865']
+}
+```
+
+</details>
+
+
+<details>
+<summary>Sample Failed Response</summary>
+
+```js
+{
+    status: false,
+    data: 'No mail with the code was received within the specified time'
+}
+```
+
+</details>
+
 
 
 # Contact 

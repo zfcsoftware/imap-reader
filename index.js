@@ -58,7 +58,6 @@ const read = (data) => {
             });
 
             imap.once('error', err => {
-                // console.log(err);
                 resolve({
                     status: false,
                     data: err.message
@@ -218,7 +217,10 @@ const waitForCode = ({ querySelector = '', codeLength = 0, codeType = '0', imap,
 
                                 } catch (err) { }
                                 if (findResponse == false) {
-                                    search_code.push(global_query_item.textContent)
+                                    global_query_item = global_query_item.querySelector('body')
+                                    if (global_query_item.textContent.length > 0) {
+                                        search_code.push(global_query_item.textContent)
+                                    }
                                 }
 
                             } catch (err) { }
@@ -252,6 +254,7 @@ const waitForCode = ({ querySelector = '', codeLength = 0, codeType = '0', imap,
         resolve(response_status)
     })
 }
+
 
 module.exports = {
     read,
