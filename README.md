@@ -145,6 +145,7 @@ imapReader.waitForLink({
 <details>
 <summary>Sample Successful Response</summary>
 ```js
+
 {
     status: true,
     data: [
@@ -152,6 +153,7 @@ imapReader.waitForLink({
             'https://mandrillapp.com/track/click/31165340/help.openai.com?p=eyjzijoiwkrkb3gxm2vaoghssnnzcdzrq19xzxv6rfbriiwidii6mswicci6intcinvcijozmte2ntm0mcxcinzcijoxlfwidxjsxci6xcjodhrwczpcxfwvxfxcl2hlbhaub3blbmfplmnvbvwilfwiawrcijpcimfhnjcwmmrlyjgxodrlmde4ndrlodnmogy1odjlnzuwxcisxcj1cmxfawrzxci6w1wiztdhngy4zgrlngrmzwmyzmiwnda3nmzinjlhztfmytfkowy4zmq3m1wixx0ifq'
         ]
 }
+
 ```
 
 </details>
@@ -160,10 +162,12 @@ imapReader.waitForLink({
 <details>
 <summary>Sample Failed Response</summary>
 ```js
+
 {
     status: false,
     data: 'No mail with the link was received within the specified time'
 }
+
 ```
 </details>
 
@@ -172,6 +176,7 @@ imapReader.waitForLink({
 
 
 ```js
+
 const imapReader = require("imap-reader");
 
 imapReader.waitForCode({
@@ -207,11 +212,14 @@ imapReader.waitForCode({
 
 <details>
 <summary>Sample Successful Response</summary>
+
 ```js
+
 {
     status: true,
     data: ['542569865']
 }
+
 ```
 
 </details>
@@ -221,10 +229,12 @@ imapReader.waitForCode({
 <summary>Sample Failed Response</summary>
 
 ```js
+
 {
     status: false,
     data: 'No mail with the code was received within the specified time'
 }
+
 ```
 
 </details>
