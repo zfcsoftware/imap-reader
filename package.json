@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "imap": "^0.8.19",
+    "jsdom": "^22.1.0",
     "mailparser": "^3.6.5"
   },
   "repository": {
@@ -25,5 +26,5 @@
     "url": "https://github.com/zfcsoftware/imap-reader.git"
   },
   "readme": "README.md",
-  "homepage":"https://www.npmjs.com/package/imap-reader"
+  "homepage": "https://www.npmjs.com/package/imap-reader"
 }

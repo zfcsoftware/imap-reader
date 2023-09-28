@@ -4,10 +4,13 @@
 
 # Usage
 
+
 ```bash
 npm i imap-reader
 ```
 
+
+### Receive all incoming mails
 
 ```js
 const imapReader = require("imap-reader");
@@ -26,6 +29,7 @@ imapReader.read({
     console.log(err)
 })
 ```
+
 
 <details>
 <summary>Sample Successful Response</summary>
@@ -107,6 +111,102 @@ imapReader.read({
 ```
 
 </details>
+
+### Search for a link in incoming mails and get the link
+
+```js
+const imapReader = require("imap-reader");
+
+imapReader.waitForLink({
+    searchLinkString: 'https://mandrillapp.com/track/click/',
+    imap: {
+        user: 'alawocolynsm@hotmail.com',
+        password: 'LKhHSrA80',
+        host: 'imap-mail.outlook.com',
+        port: 993,
+        tls: true
+    },
+    timeOut: 0
+})
+    .then(resp => {
+        console.log(resp)
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+```
+
+**searchLinkString:** It scans all the links in the incoming mail html data and if the string you send with this variable is in the link, it returns that link to you in an array.
+
+**timeOut: (Optional)** Specifies how many milliseconds to wait for a link containing a string you send. If not sent, it is set to 2 minutes. 0 If sent, it waits until it arrives. 1 Second = 1000 Milliseconds
+
+
+<details>
+<summary>Sample Successful Response</summary>
+```js
+{
+    status: true,
+    data: [
+            'https://mandrillapp.com/track/click/31165340/auth0.openai.com?p=eyjzijoilvh4vc1xt2nocmyyvkn1ckturuz4zffwv05jiiwidii6mswicci6intcinvcijozmte2ntm0mcxcinzcijoxlfwidxjsxci6xcjodhrwczpcxfwvxfxcl2f1dggwlm9wzw5has5jb21cxfwvdvxcxc9lbwfpbc12zxjpzmljyxrpb24_dglja2v0ptlobdvzrnzyowjzb0x1au5juktuqjfks0nmbfe3ahf3i1wilfwiawrcijpcimfhnjcwmmrlyjgxodrlmde4ndrlodnmogy1odjlnzuwxcisxcj1cmxfawrzxci6w1wimwm3otuymjnimmq0ymuwmjbmzdjhntbmmmm5yzqxzjewmthlndu0y1wixx0ifq',
+            'https://mandrillapp.com/track/click/31165340/help.openai.com?p=eyjzijoiwkrkb3gxm2vaoghssnnzcdzrq19xzxv6rfbriiwidii6mswicci6intcinvcijozmte2ntm0mcxcinzcijoxlfwidxjsxci6xcjodhrwczpcxfwvxfxcl2hlbhaub3blbmfplmnvbvwilfwiawrcijpcimfhnjcwmmrlyjgxodrlmde4ndrlodnmogy1odjlnzuwxcisxcj1cmxfawrzxci6w1wiztdhngy4zgrlngrmzwmyzmiwnda3nmzinjlhztfmytfkowy4zmq3m1wixx0ifq'
+        ]
+}
+```
+
+</details>
+
+
+<details>
+<summary>Sample Failed Response</summary>
+```js
+{
+    status: false,
+    data: 'No mail with the link was received within the specified time'
+}
+```
+</details>
+
+### Search for a code that meets the conditions you set in incoming mails
+
+
+
+```js
+const imapReader = require("imap-reader");
+
+imapReader.waitForLink({
+ imap: {
+        user: 'lassalnimishr@hotmail.com',
+        password: '91XTVPu69',
+        host: 'imap-mail.outlook.com',
+        port: 993,
+        tls: true
+    },
+    timeOut: 0,
+    codeType: 'number',
+    codeLength: 9,
+    querySelector: 'a'
+})
+    .then(resp => {
+        console.log(resp)
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+```
+
+   **timeOut: (Optional)** Specifies how many milliseconds to wait for a link containing a string you send. If not sent, it is set to 2 minutes. 0 If sent, it waits until it arrives. 1 Second = 1000 Milliseconds
+   
+   **codeType: (Optional)** Searches only for codes of the type you provide. Species it can take: number, lowerLetter, upperLetter, allLetter, nonAlfanumeric
+
+   **codeLength: (Optional)** Filters strings with the number of characters you give from all html elements.
+
+   **querySelector: (Optional)** It allows you to limit your html content and filter the codes within the html element you select. For example, if it is sent as 'a', it scans the content of the first a tag in the html content.
+
+
+# Contact 
+- By email only. zfcsoftware@gmail.com
 
 
 # License 
