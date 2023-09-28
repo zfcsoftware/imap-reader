@@ -1,6 +1,10 @@
 # imap-reader
 
--   Returns the header, mail and html information of all messages in the mailbox of the mail you give imap information in array type.
+This library provides the following features
+
+- It allows you to get the header, sender, field, html, date information of all incoming mails belonging to that mail with a mail information.
+- It searches for a link that meets the conditions you want in incoming mails for a mail information. If it finds the link, it returns the full link to you.
+- Searches for a confirmation code that meets the conditions you want in incoming mails for an incoming mail information
 
 # Usage
 
