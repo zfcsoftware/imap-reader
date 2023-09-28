@@ -149,8 +149,7 @@ imapReader.waitForLink({
 {
     status: true,
     data: [
-            'https://mandrillapp.com/track/click/31165340/auth0.openai.com?p=eyjzijoilvh4vc1xt2nocmyyvkn1ckturuz4zffwv05jiiwidii6mswicci6intcinvcijozmte2ntm0mcxcinzcijoxlfwidxjsxci6xcjodhrwczpcxfwvxfxcl2f1dggwlm9wzw5has5jb21cxfwvdvxcxc9lbwfpbc12zxjpzmljyxrpb24_dglja2v0ptlobdvzrnzyowjzb0x1au5juktuqjfks0nmbfe3ahf3i1wilfwiawrcijpcimfhnjcwmmrlyjgxodrlmde4ndrlodnmogy1odjlnzuwxcisxcj1cmxfawrzxci6w1wimwm3otuymjnimmq0ymuwmjbmzdjhntbmmmm5yzqxzjewmthlndu0y1wixx0ifq',
-            'https://mandrillapp.com/track/click/31165340/help.openai.com?p=eyjzijoiwkrkb3gxm2vaoghssnnzcdzrq19xzxv6rfbriiwidii6mswicci6intcinvcijozmte2ntm0mcxcinzcijoxlfwidxjsxci6xcjodhrwczpcxfwvxfxcl2hlbhaub3blbmfplmnvbvwilfwiawrcijpcimfhnjcwmmrlyjgxodrlmde4ndrlodnmogy1odjlnzuwxcisxcj1cmxfawrzxci6w1wiztdhngy4zgrlngrmzwmyzmiwnda3nmzinjlhztfmytfkowy4zmq3m1wixx0ifq'
+            'https://mandrillapp.com/track/click/31165340/auth0.openai.com/success'
         ]
 }
 
