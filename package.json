@@ -1,6 +1,6 @@
 {
   "name": "imap-reader",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Returns the header, mail and html information of all messages in the mailbox of the mail you give imap information in array type.",
   "main": "index.js",
   "scripts": {
