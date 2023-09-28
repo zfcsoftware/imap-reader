@@ -148,9 +148,7 @@ imapReader.waitForLink({
 
 {
     status: true,
-    data: [
-            "https://mandrillapp.com/track/click/31165340/auth0.openai.com/success"
-        ]
+    data:
 }
 
 ```
