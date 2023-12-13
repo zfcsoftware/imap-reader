@@ -24,7 +24,8 @@ imapReader.read({
     password: 'all7Do61',
     host: 'imap-mail.outlook.com',
     port: 993,
-    tls: true
+    tls: true,
+    type: 'INBOX' // default INBOX if you want to read the spam folder you should type Junk
 })
 .then(response=>{
     console.log(response)
@@ -130,7 +131,8 @@ imapReader.waitForLink({
         port: 993,
         tls: true
     },
-    timeOut: 0
+    timeOut: 0,
+    type: 'INBOX' // default INBOX if you want to read the spam folder you should type Junk
 })
     .then(resp => {
         console.log(resp)
@@ -195,7 +197,8 @@ imapReader.waitForCode({
     timeOut: 0,
     codeType: 'number',
     codeLength: 9,
-    querySelector: 'a'
+    querySelector: 'a',
+    type: 'INBOX' // default INBOX if you want to read the spam folder you should type Junk
 })
     .then(resp => {
         console.log(resp)

@@ -3,15 +3,15 @@ const { simpleParser } = require('mailparser');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-
-const read = (data) => {
+// Junk
+const read = (data, type = 'INBOX') => {
     return new Promise((resolve, reject) => {
         var global_response = []
         try {
             const imapConfig = data
             const imap = new Imap(imapConfig);
             imap.once('ready', () => {
-                imap.openBox('INBOX', false, () => {
+                imap.openBox(type, false, () => {
                     imap.search(['ALL'], (err, results) => {
                         if (err) {
                             resolve({
@@ -92,7 +92,7 @@ const sleep = (ms) => {
     })
 }
 
-const waitForLink = ({ searchLinkString = 'http', imap, timeOut = 120000 }) => {
+const waitForLink = ({ searchLinkString = 'http', imap, timeOut = 120000 , type = 'INBOX'}) => {
     return new Promise(async (resolve, reject) => {
         query = {
             timeOut: timeOut,
@@ -110,7 +110,7 @@ const waitForLink = ({ searchLinkString = 'http', imap, timeOut = 120000 }) => {
         try {
             while (while_status) {
                 try {
-                    var query_response = await read(query.imap).catch(err => { return { status: false } })
+                    var query_response = await read(query.imap,type).catch(err => { return { status: false } })
                     if (query_response.status == true && query_response.data.inbox_data.length > 0) {
                         query_response.data.inbox_data.forEach(item => {
                             try {
@@ -150,7 +150,7 @@ const waitForLink = ({ searchLinkString = 'http', imap, timeOut = 120000 }) => {
     })
 }
 
-const waitForCode = ({ querySelector = '', codeLength = 0, codeType = '0', imap, timeOut = 120000 }) => {
+const waitForCode = ({ querySelector = '', codeLength = 0, codeType = '0', imap, timeOut = 120000, type = 'INBOX' }) => {
     return new Promise(async (resolve, reject) => {
         var wait_time = Date.now()
         var while_status = true
@@ -162,7 +162,7 @@ const waitForCode = ({ querySelector = '', codeLength = 0, codeType = '0', imap,
         try {
             while (while_status) {
                 try {
-                    var query_response = await read(imap).catch(err => { return { status: false } })
+                    var query_response = await read(imap,type).catch(err => { return { status: false } })
                     if (query_response.status == true && query_response.data.inbox_data.length > 0) {
                         query_response.data.inbox_data.forEach(item => {
                             var new_v = item.html
